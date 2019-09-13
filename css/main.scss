@@ -3,16 +3,13 @@
 
 
 /*Linking Othe .scss files*/
-@import 'modules/_header.scss';
-@import 'modules/_navbar.scss';
-@import 'modules/_body.scss';
-@import 'modules/_footer.scss';
-@import 'modules/_reset.scss';
-@import 'modules/_vars.scss';
+@import './reset';
+@import './vars';
 
 .hidden{
 	display: none;
 }
+
 
 
 body {
@@ -24,9 +21,30 @@ body {
   min-width: 340px;
 }
 
-@media screen and (min-width: 340px){
-    h1{
-        color: red;
-    }
+header{
+  
+  .mobileHead{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: red;
 
+    .mobileLogo{
+      width: 100px;
+      margin-left: 5px;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+    .burgerBut{
+      height: 35px;
+      width: 35px;
+      margin-right: 10px;
+      cursor: pointer;
+
+      align-self: center;
+      background: "../images/burger.png" no-repeat center;
+    }
+    
+  }
 }
