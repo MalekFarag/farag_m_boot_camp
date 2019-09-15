@@ -17,18 +17,19 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   min-width: 340px;
 }
 
 header{
+    position: fixed;
+    width: 100%;
   
   .mobileHead{
     height: 50px;
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: red;
 
     .mobileLogo{
       width: 100px;
@@ -43,8 +44,88 @@ header{
       cursor: pointer;
 
       align-self: center;
-      background: "../images/burger.png" no-repeat center;
+      //background: "../images/burger.png" no-repeat center;
     }
     
   }
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+
+  .hero{
+    margin-top: 50px;
+    @include flex-center;
+    padding: 100px;
+    h2{
+      font-size: 36px;
+    }
+  }
+
+  .hwd{
+    @include flex-center;
+
+    .para{
+      text-align: left;
+      h4{
+        font-size: 20px;
+        margin: 10px;
+      }
+      p{
+        font-size: 14px;
+        margin: 5px;
+        margin-left: 10px;
+      }
+    }
+    h2{
+      font-size: 24px;
+    }
+  }
+
+  .team{
+    @include flex-center;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .mateImg{
+      h6{
+        font-size: 18px;
+      }
+
+      border-radius: 60px;
+      height: 100px;
+      width: 100px;;
+      
+    }
+    #nick{
+        background: url("../images/square_team_pic/square_team_pic-3.jpg") center no-repeat;
+        background-size: cover;
+      }
+
+      #collins{
+        background: url("../images/square_team_pic/square_team_pic.jpg") center no-repeat;
+        background-size: cover;
+      }
+
+      #malek{
+        background: url("../images/square_team_pic/square_team_pic-2.jpg") center no-repeat;
+        background-size: cover;
+      }
+    .mateInfo{
+
+    }
+
+  }
+
+  .portfolio{
+    @include flex-center;
+    
+  }
+
+  .contact{
+    @include flex-center;
+    
+  }
+
 }

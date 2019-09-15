@@ -64,12 +64,17 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   min-width: 340px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
 }
 
 header .mobileHead {
   height: 50px;
+  margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +85,6 @@ header .mobileHead {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: red;
 }
 
 header .mobileHead .mobileLogo {
@@ -99,6 +103,149 @@ header .mobileHead .burgerBut {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background: "../images/burger.png" no-repeat center;
+}
+
+.body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.body .hero {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  padding: 100px;
+}
+
+.body .hero h2 {
+  font-size: 36px;
+}
+
+.body .hwd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.body .hwd .para {
+  text-align: left;
+}
+
+.body .hwd .para h4 {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.body .hwd .para p {
+  font-size: 14px;
+  margin: 5px;
+  margin-left: 10px;
+}
+
+.body .hwd h2 {
+  font-size: 24px;
+}
+
+.body .team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.body .team .mateImg {
+  border-radius: 60px;
+  height: 100px;
+  width: 100px;
+}
+
+.body .team .mateImg h6 {
+  font-size: 18px;
+}
+
+.body .team #nick {
+  background: url("../images/square_team_pic/square_team_pic-3.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.body .team #collins {
+  background: url("../images/square_team_pic/square_team_pic.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.body .team #malek {
+  background: url("../images/square_team_pic/square_team_pic-2.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.body .portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.body .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
