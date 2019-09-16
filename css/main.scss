@@ -14,10 +14,13 @@
 
 body {
   font-family: Helvetica, Arial, sans-serif;
+
+  //Background
 }
 
 .container {
   min-width: 340px;
+  text-align: center;
 }
 
 header{
@@ -32,14 +35,14 @@ header{
     justify-content: space-between;
 
     .mobileLogo{
-      width: 100px;
+      width: 85px;
       margin-left: 5px;
       align-self: flex-end;
       cursor: pointer;
     }
     .burgerBut{
-      height: 35px;
-      width: 35px;
+      height: 30px;
+      width: 30px;
       margin-right: 10px;
       cursor: pointer;
 
@@ -55,69 +58,115 @@ header{
     flex-direction: column;
 
   .hero{
-    margin-top: 50px;
+    margin-top: 180px;
+    
     @include flex-center;
-    padding: 100px;
     h2{
+      margin-top: 50px;
       font-size: 36px;
+    }
+    p{
+      margin-bottom: 180px;
     }
   }
 
   .hwd{
     @include flex-center;
-
+    h2{
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
     .para{
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      width: 95%;
       text-align: left;
       h4{
-        font-size: 20px;
-        margin: 10px;
+        @include mobile-header;
+        margin-left: 0px;
+        margin-bottom: 10px;
       }
       p{
-        font-size: 14px;
-        margin: 5px;
-        margin-left: 10px;
+        @include mobile-text;
       }
     }
-    h2{
-      font-size: 24px;
-    }
+    
   }
 
+
+  .teamHead{
+    @include mobile-header;
+    margin-top: $mobile-section-space;
+  }
   .team{
     @include flex-center;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    width: 95%;
+    margin-top: 20px;;
+    margin-bottom: 0px;
 
     .mateImg{
-      h6{
-        font-size: 18px;
-      }
+      display: flex;
+      justify-content: center;
 
       border-radius: 60px;
       height: 100px;
-      width: 100px;;
+      width: 100px;
+
+      transition: all .2s ease;
       
+      &:hover{
+        opacity: .7;
+      }
     }
-    #nick{
+      .nick{
         background: url("../images/square_team_pic/square_team_pic-3.jpg") center no-repeat;
         background-size: cover;
       }
 
-      #collins{
+      .collins{
         background: url("../images/square_team_pic/square_team_pic.jpg") center no-repeat;
         background-size: cover;
       }
 
-      #malek{
+      .malek{
         background: url("../images/square_team_pic/square_team_pic-2.jpg") center no-repeat;
         background-size: cover;
       }
-    .mateInfo{
-
-    }
+    
 
   }
+    .mateInfo{
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+        .bioHead{
+          margin-top: 10px;
+          font-weight: bolder;
+          font-size: 16px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 87%;
 
+          position: relative;
+        }
+        .bio{
+          @include mobile-text;
+          text-align: left;
+          line-height: 18px;
+          margin-top: 5px;
+          margin-left: auto;
+          margin-right: auto;
+
+          width: 95%;
+      }
+
+    }
   .portfolio{
     @include flex-center;
     
@@ -125,7 +174,173 @@ header{
 
   .contact{
     @include flex-center;
+    margin-top: $mobile-section-space;
+    width: 100%;
+    h3{
+      @include mobile-header;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 95%;
+      label{
+        opacity: .5;
+        text-align: left;
+        margin-top: 10px;
+      }
+      input{
+        margin-top: 5px;
+
+        font-size: 16px;
+        padding-left: 10px;
+
+        height: 27px;
+
+        border: solid 1px gray;
+        border-radius: 8px;
+        transition: all .2s ease;
+
+        &:focus{
+          border-radius: 12px;
+        }
+      }
+
+      #message{
+        height: 150px;
+        margin-top: 5px;
+
+        font-size: 16px;
+        padding-left: 10px;
+
+        border: solid 1px gray;
+        border-radius: 8px;
+        transition: all .2s ease;
+
+        &:focus{
+          border-radius: 12px;
+        }
+      }
+      button{
+          cursor: pointer;
+          margin-top: 10px;
+          border-radius: 8px;
+
+          border: none;
+          height: 28px;
+          width: 50%;
+
+          margin-left: auto;
+          margin-right: auto;
+          
+          transition: all .2s ease;
+
+          &:focus{
+            background-color: blue;
+            border-radius: 12px;
+          }
+        }
+    }
+    
+    h4{
+      @include mobile-header;
+    }
+
+    iframe{
+      margin-top: 20px;
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  .sub{
+    @include flex-center;
+    margin-top: $mobile-section-space;
+    width: 60%;
+
+    padding: 5px;
+
+    p{
+      @include mobile-header;
+      margin-top: 0px;
+    }
+    button{
+      cursor: pointer;
+          margin-top: 10px;
+          border-radius: 8px;
+
+          border: none;
+          height: 28px;
+          width: 60%;
+
+          transition: all .2s ease;
+
+          &:focus{
+            background-color: blue;
+            border-radius: 12px;
+          }
+    }
+  }
+}
+
+footer{
+  margin-top: $mobile-section-space;
+  width: 95%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-top: solid 1px gray;
+  .footerIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    height: 20px;
+
+    margin-top: 10px;
+    img{
+      height: 90%;
+      cursor: pointer;
+    }
+    #fb{
+      position: relative;
+      bottom: 1px;
+      height: 102%;
+    }
+  }
+
+  .footerNav{
+    width: 60%;
+
+    margin-top: 10px;
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      @include mobile-text;
+      font-size: 14px;
+      margin-top: 1px;
+
+      a{
+        cursor: pointer;
+        color: black;
+        //text-decoration: none;
+      }
+    }
     
   }
 
+  .copyright{
+    @include mobile-text;
+    margin-top: 30px;
+    text-align: right;
+    font-size: 10px;
+    width: 100%;
+  }
 }

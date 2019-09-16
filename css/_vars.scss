@@ -1,6 +1,7 @@
 //making css variable
 
 $global-bg-color: white;
+$mobile-section-space: 30px;
 
 @mixin flex-center{
     display: flex;
@@ -8,4 +9,16 @@ $global-bg-color: white;
     align-items: center;
     align-self: center;
     text-align: center;
+}
+
+@mixin mobile-header{
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+@mixin mobile-text {
+    font-size: 16px;
+    letter-spacing: -.7px;
 }

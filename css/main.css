@@ -65,6 +65,7 @@ body {
 
 .container {
   min-width: 340px;
+  text-align: center;
 }
 
 header {
@@ -88,7 +89,7 @@ header .mobileHead {
 }
 
 header .mobileHead .mobileLogo {
-  width: 100px;
+  width: 85px;
   margin-left: 5px;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -96,8 +97,8 @@ header .mobileHead .mobileLogo {
 }
 
 header .mobileHead .burgerBut {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   margin-right: 10px;
   cursor: pointer;
   -ms-flex-item-align: center;
@@ -116,7 +117,7 @@ header .mobileHead .burgerBut {
 }
 
 .body .hero {
-  margin-top: 50px;
+  margin-top: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,11 +131,15 @@ header .mobileHead .burgerBut {
   -ms-flex-item-align: center;
       align-self: center;
   text-align: center;
-  padding: 100px;
 }
 
 .body .hero h2 {
+  margin-top: 50px;
   font-size: 36px;
+}
+
+.body .hero p {
+  margin-bottom: 180px;
 }
 
 .body .hwd {
@@ -153,23 +158,45 @@ header .mobileHead .burgerBut {
   text-align: center;
 }
 
+.body .hwd h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
 .body .hwd .para {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
   text-align: left;
 }
 
 .body .hwd .para h4 {
   font-size: 20px;
   margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-left: 0px;
+  margin-bottom: 10px;
 }
 
 .body .hwd .para p {
-  font-size: 14px;
-  margin: 5px;
-  margin-left: 10px;
+  font-size: 16px;
+  letter-spacing: -.7px;
 }
 
-.body .hwd h2 {
-  font-size: 24px;
+.body .teamHead {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-top: 30px;
 }
 
 .body .team {
@@ -188,33 +215,78 @@ header .mobileHead .burgerBut {
   text-align: center;
   -ms-flex-direction: row;
       flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .body .team .mateImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 60px;
   height: 100px;
   width: 100px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
-.body .team .mateImg h6 {
-  font-size: 18px;
+.body .team .mateImg:hover {
+  opacity: .7;
 }
 
-.body .team #nick {
+.body .team .nick {
   background: url("../images/square_team_pic/square_team_pic-3.jpg") center no-repeat;
   background-size: cover;
 }
 
-.body .team #collins {
+.body .team .collins {
   background: url("../images/square_team_pic/square_team_pic.jpg") center no-repeat;
   background-size: cover;
 }
 
-.body .team #malek {
+.body .team .malek {
   background: url("../images/square_team_pic/square_team_pic-2.jpg") center no-repeat;
   background-size: cover;
+}
+
+.body .mateInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.body .mateInfo .bioHead {
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 87%;
+  position: relative;
+}
+
+.body .mateInfo .bio {
+  font-size: 16px;
+  letter-spacing: -.7px;
+  text-align: left;
+  line-height: 18px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
 }
 
 .body .portfolio {
@@ -247,5 +319,220 @@ header .mobileHead .burgerBut {
   -ms-flex-item-align: center;
       align-self: center;
   text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.body .contact h3 {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+
+.body .contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 95%;
+}
+
+.body .contact form label {
+  opacity: .5;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.body .contact form input {
+  margin-top: 5px;
+  font-size: 16px;
+  padding-left: 10px;
+  height: 27px;
+  border: solid 1px gray;
+  border-radius: 8px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.body .contact form input:focus {
+  border-radius: 12px;
+}
+
+.body .contact form #message {
+  height: 150px;
+  margin-top: 5px;
+  font-size: 16px;
+  padding-left: 10px;
+  border: solid 1px gray;
+  border-radius: 8px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.body .contact form #message:focus {
+  border-radius: 12px;
+}
+
+.body .contact form button {
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  height: 28px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.body .contact form button:focus {
+  background-color: blue;
+  border-radius: 12px;
+}
+
+.body .contact h4 {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+
+.body .contact iframe {
+  margin-top: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+.body .sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  margin-top: 30px;
+  width: 60%;
+  padding: 5px;
+}
+
+.body .sub p {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  margin-top: 0px;
+}
+
+.body .sub button {
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  height: 28px;
+  width: 60%;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.body .sub button:focus {
+  background-color: blue;
+  border-radius: 12px;
+}
+
+footer {
+  margin-top: 30px;
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: solid 1px gray;
+}
+
+footer .footerIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30%;
+  height: 20px;
+  margin-top: 10px;
+}
+
+footer .footerIcons img {
+  height: 90%;
+  cursor: pointer;
+}
+
+footer .footerIcons #fb {
+  position: relative;
+  bottom: 1px;
+  height: 102%;
+}
+
+footer .footerNav {
+  width: 60%;
+  margin-top: 10px;
+}
+
+footer .footerNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 16px;
+  letter-spacing: -.7px;
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+footer .footerNav ul a {
+  cursor: pointer;
+  color: black;
+}
+
+footer .copyright {
+  font-size: 16px;
+  letter-spacing: -.7px;
+  margin-top: 30px;
+  text-align: right;
+  font-size: 10px;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
