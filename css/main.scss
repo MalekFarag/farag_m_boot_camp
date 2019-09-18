@@ -3,12 +3,7 @@
 
 
 /*Linking Othe .scss files*/
-@import 'modules/_header.scss';
-@import 'modules/_navbar.scss';
-@import 'modules/_body.scss';
-@import 'modules/_footer.scss';
-@import 'modules/_reset.scss';
-@import 'modules/_vars.scss';
+
 
 .hidden{
 	display: none;
@@ -20,13 +15,6 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   min-width: 340px;
 }
 
-@media screen and (min-width: 340px){
-    h1{
-        color: red;
-    }
-
-}
