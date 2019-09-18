@@ -64,7 +64,7 @@ table {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica';
 }
 
 .container {
@@ -75,6 +75,7 @@ body {
 header {
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
 
 header .mobileHead {
@@ -113,21 +114,24 @@ header .mobileHead .burgerBut {
 
 header .mainNav {
   background-color: white;
-  border-top: solid 1px lightgray;
-  margin-top: 5px;
+  position: fixed;
+  width: 100%;
+  border-top: solid 1px black;
 }
 
 header .mainNav a {
-  color: black;
+  color: whitesmoke;
   text-decoration: none;
+  background-color: black;
+  padding: 5px;
+  cursor: pointer;
 }
 
 header .mainNav li {
   padding-top: 40px;
   padding-bottom: 40px;
   font-size: 20px;
-  border-bottom: solid 1px lightgray;
-  cursor: pointer;
+  border-bottom: solid 1px black;
 }
 
 header .open {
@@ -146,7 +150,7 @@ header .open {
 }
 
 .body .hero {
-  margin-top: 180px;
+  margin-top: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,13 +166,28 @@ header .open {
   text-align: center;
 }
 
-.body .hero h2 {
-  margin-top: 50px;
-  font-size: 36px;
+.body .hero .videoHead {
+  width: 100% !important;
+  height: auto !important;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
-.body .hero p {
-  margin-bottom: 180px;
+.body .hero .moreBut {
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  height: 30px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.body .hero .moreBut:hover {
+  background-color: lightgray;
+  color: black;
 }
 
 .body .hwd {
@@ -188,6 +207,14 @@ header .open {
 }
 
 .body .hwd h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
+  width: 95%;
   font-size: 20px;
   letter-spacing: 1px;
 }
@@ -211,8 +238,21 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
+  letter-spacing: 2px;
+  width: 40%;
   margin-left: 0px;
   margin-bottom: 10px;
+}
+
+.body .hwd .para .hwd2 {
+  width: 30%;
+}
+
+.body .hwd .para .hwd3 {
+  width: 60%;
 }
 
 .body .hwd .para p {
@@ -225,6 +265,9 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
   margin-top: 30px;
 }
 
@@ -355,11 +398,15 @@ header .open {
   width: 100%;
 }
 
-.body .contact h3 {
+.body .contact h2 {
   font-size: 20px;
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
+  width: 95%;
 }
 
 .body .contact form {
@@ -388,13 +435,14 @@ header .open {
   padding-left: 10px;
   height: 27px;
   border: solid 1px gray;
-  border-radius: 8px;
+  border-radius: 2px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
 
 .body .contact form input:focus {
-  border-radius: 12px;
+  background-color: gray;
+  color: white;
 }
 
 .body .contact form #message {
@@ -403,31 +451,37 @@ header .open {
   font-size: 16px;
   padding-left: 10px;
   border: solid 1px gray;
-  border-radius: 8px;
+  border-radius: 2px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
 
 .body .contact form #message:focus {
-  border-radius: 12px;
+  background-color: gray;
+  color: white;
 }
 
 .body .contact form button {
-  cursor: pointer;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: none;
   height: 28px;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  height: 30px;
   -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  height: 30px;
   transition: all .2s ease;
 }
 
-.body .contact form button:focus {
-  background-color: blue;
-  border-radius: 12px;
+.body .contact form button:hover {
+  background-color: lightgray;
+  color: black;
 }
 
 .body .contact h4 {
@@ -435,6 +489,9 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
 }
 
 .body .contact iframe {
@@ -467,23 +524,32 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
   margin-top: 0px;
 }
 
 .body .sub button {
-  cursor: pointer;
   margin-top: 10px;
   border-radius: 8px;
   border: none;
   height: 28px;
-  width: 60%;
+  width: 80%;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  height: 30px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
 
-.body .sub button:focus {
-  background-color: blue;
-  border-radius: 12px;
+.body .sub button:hover {
+  background-color: lightgray;
+  color: black;
 }
 
 footer {

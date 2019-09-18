@@ -18,7 +18,7 @@
 
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica';
 
   //Background
 }
@@ -31,6 +31,8 @@ body {
 header{
     position: fixed;
     width: 100%;
+
+    z-index: 99;
   
   .mobileHead{
     height: 50px;
@@ -58,16 +60,16 @@ header{
 
   .mainNav{
     background-color: white;
-    // position: relative;
-    // z-index: -1;
-    border-top: solid 1px lightgray;
-    margin-top: 5px;
+    position: fixed;
+    width: 100%;
+    border-top: solid 1px black;
 
     a{
-      color: black;
+      color: whitesmoke;
       text-decoration: none;
-
-      
+      background-color: black;
+      padding: 5px;
+      cursor: pointer;
     }
     li{
         padding-top: 40px;
@@ -76,8 +78,8 @@ header{
         font-size: 20px;
 
         
-        border-bottom: solid 1px lightgray;
-        cursor: pointer;
+        border-bottom: solid 1px black;
+        
       }
   }
 
@@ -85,27 +87,33 @@ header{
     transform: rotate(90deg);
   }
 }
-
+ 
 .body{
     display: flex;
     flex-direction: column;
 
   .hero{
-    margin-top: 180px;
-    
+    margin-top: 65px;
     @include flex-center;
-    h2{
-      margin-top: 50px;
-      font-size: 36px;
+
+    
+    .videoHead{
+      width: 100% !important;
+      height: auto !important;
+
+      transition: all .2s ease;
     }
-    p{
-      margin-bottom: 180px;
-    }
+
+    .moreBut{
+      @include button;
+      }
   }
 
   .hwd{
     @include flex-center;
     h2{
+        @include mobile-header;
+        width: 95%;
         font-size: 20px;
         letter-spacing: 1px;
       }
@@ -118,9 +126,23 @@ header{
       text-align: left;
       h4{
         @include mobile-header;
+
+        letter-spacing: 2px;
+        width: 40%;
         margin-left: 0px;
         margin-bottom: 10px;
+        
       }
+      
+      .hwd2{
+        width: 30%;
+      }
+
+      .hwd3{
+        width: 60%;
+      }
+      
+      
       p{
         @include mobile-text;
       }
@@ -212,8 +234,9 @@ header{
     @include flex-center;
     margin-top: $mobile-section-space;
     width: 100%;
-    h3{
+    h2{
       @include mobile-header;
+      width: 95%;
     }
     form{
       display: flex;
@@ -234,11 +257,12 @@ header{
         height: 27px;
 
         border: solid 1px gray;
-        border-radius: 8px;
+        border-radius: 2px;
         transition: all .2s ease;
 
         &:focus{
-          border-radius: 12px;
+          background-color: gray;
+          color: white;
         }
       }
 
@@ -250,32 +274,23 @@ header{
         padding-left: 10px;
 
         border: solid 1px gray;
-        border-radius: 8px;
+        border-radius: 2px;
         transition: all .2s ease;
 
         &:focus{
-          border-radius: 12px;
+          background-color: gray;
+          color: white;
         }
       }
       button{
-          cursor: pointer;
-          margin-top: 10px;
-          border-radius: 8px;
-
-          border: none;
-          height: 28px;
-          width: 50%;
-
-          margin-left: auto;
-          margin-right: auto;
-          
-          transition: all .2s ease;
-
-          &:focus{
-            background-color: blue;
-            border-radius: 12px;
-          }
-        }
+        height: 28px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 30px;
+        transition: all .2s ease;
+        @include button;
+      }
     }
     
     h4{
@@ -301,20 +316,14 @@ header{
       margin-top: 0px;
     }
     button{
-      cursor: pointer;
-          margin-top: 10px;
-          border-radius: 8px;
+      
+      margin-top: 10px;
+      border-radius: 8px;
 
-          border: none;
-          height: 28px;
-          width: 60%;
-
-          transition: all .2s ease;
-
-          &:focus{
-            background-color: blue;
-            border-radius: 12px;
-          }
+      border: none;
+      height: 28px;
+      width: 80%;
+      @include button;
     }
   }
 }
