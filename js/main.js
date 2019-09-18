@@ -1,6 +1,21 @@
 (() => {
     console.log('Fired.');
     
+    //burger menu
+    const burger = document.querySelector('.burgerBut'),
+          nav    = document.querySelector('.mainNav');
+
+          function showNav(){
+              console.log('You touched my burger >:(');
+              nav.classList.toggle('hidden');
+
+              burger.classList.toggle('open');
+          }
+
+          burger.addEventListener('click', showNav);
+    
+    
+    
     const   mates     = document.querySelectorAll('.mateImg'),
             bioHead  = document.querySelector('.bioHead'),
             bio      = document.querySelector('.bio'),

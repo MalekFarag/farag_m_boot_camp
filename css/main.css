@@ -55,6 +55,10 @@ table {
   border-spacing: 0;
 }
 
+.open {
+  right: 7px;
+}
+
 .hidden {
   display: none;
 }
@@ -97,6 +101,7 @@ header .mobileHead .mobileLogo {
 }
 
 header .mobileHead .burgerBut {
+  position: relative;
   height: 30px;
   width: 30px;
   margin-right: 10px;

@@ -6,6 +6,10 @@
 @import './reset';
 @import './vars';
 
+.open{
+  right: 7px;
+}
+
 .hidden{
 	display: none;
 }
@@ -41,6 +45,7 @@ header{
       cursor: pointer;
     }
     .burgerBut{
+      position: relative;
       height: 30px;
       width: 30px;
       margin-right: 10px;
