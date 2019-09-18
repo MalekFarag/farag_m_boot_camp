@@ -3,20 +3,21 @@
     
     //burger menu
     const burger = document.querySelector('.burgerBut'),
-          nav    = document.querySelector('.mainNav');
+          nav    = document.querySelector('.mainNav'),
+          header = document.querySelector('header');
 
           function showNav(){
               console.log('You touched my burger >:(');
               nav.classList.toggle('hidden');
-
               burger.classList.toggle('open');
+              header.classList.toggle('whitebg');
           }
 
           burger.addEventListener('click', showNav);
     
     
     
-    const   mates     = document.querySelectorAll('.mateImg'),
+    const   mates    = document.querySelectorAll('.mateImg'),
             bioHead  = document.querySelector('.bioHead'),
             bio      = document.querySelector('.bio'),
             mateInfo = ["Hey, I’m Nick. I’m the website designer and front end developer for Cliff Creative’s. I’m a creative mind that focuses heavily on branding with logo design’s, style guides, photography, videography, 3D and more, with some HTML5 and CSS on the side. In my free time I love to play basketball, work on and drive cars, as well as portrait and automotive photography.", 

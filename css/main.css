@@ -55,12 +55,12 @@ table {
   border-spacing: 0;
 }
 
-.open {
-  right: 7px;
-}
-
 .hidden {
   display: none;
+}
+
+.whitebg {
+  background-color: white;
 }
 
 body {
@@ -109,6 +109,30 @@ header .mobileHead .burgerBut {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+header .mainNav {
+  background-color: white;
+  border-top: solid 1px lightgray;
+  margin-top: 5px;
+}
+
+header .mainNav a {
+  color: black;
+  text-decoration: none;
+}
+
+header .mainNav li {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 20px;
+  border-bottom: solid 1px lightgray;
+  cursor: pointer;
+}
+
+header .open {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .body {
@@ -240,6 +264,7 @@ header .mobileHead .burgerBut {
   width: 100px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  cursor: pointer;
 }
 
 .body .team .mateImg:hover {
@@ -262,6 +287,8 @@ header .mobileHead .burgerBut {
 }
 
 .body .mateInfo {
+  position: relative;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -536,6 +563,7 @@ footer .copyright {
   font-size: 16px;
   letter-spacing: -.7px;
   margin-top: 30px;
+  margin-bottom: 10px;
   text-align: right;
   font-size: 10px;
   width: 100%;
