@@ -11,20 +11,25 @@
 .hidden{
 	display: none;
 }
-.whitebg{
-  background-color: white;
+.bg{
+  background-color: rgba(0,0,0,.6);
+  border-bottom: solid 0px black;
+  //padding-bottom: 10px;
+}
+
+.open{
+  transform: rotate(90deg);
 }
 
 
 
 body {
   font-family: 'Helvetica';
-
-  //Background
 }
 
 .container {
   min-width: 340px;
+  max-width: 1440px;
   text-align: center;
 }
 
@@ -59,32 +64,27 @@ header{
   }
 
   .mainNav{
-    background-color: white;
+    background-color: rgba(0,0,0,.6);
     position: fixed;
     width: 100%;
-    border-top: solid 1px black;
+    height: 100%;
+    overflow: hidden;
 
     a{
       color: whitesmoke;
       text-decoration: none;
       background-color: black;
-      padding: 5px;
+      padding: 7px;
       cursor: pointer;
     }
     li{
         padding-top: 40px;
         padding-bottom: 40px;
+        text-align: right;
+        margin-right: 50px;
 
-        font-size: 20px;
-
-        
-        border-bottom: solid 1px black;
-        
+        font-size: 30px;
       }
-  }
-
-  .open{
-    transform: rotate(90deg);
   }
 }
  
@@ -151,6 +151,22 @@ header{
   }
 
 
+  .closeX{
+    width: 95%;
+
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: .7;
+
+    cursor: pointer;
+  }
+
+  .off{
+    visibility: hidden;
+  }
+
+
   .teamHead{
     @include mobile-header;
     margin-top: $mobile-section-space;
@@ -161,7 +177,6 @@ header{
     justify-content: space-between;
 
     width: 95%;
-    margin-top: 20px;;
     margin-bottom: 0px;
 
     .mateImg{
@@ -225,14 +240,9 @@ header{
       }
 
     }
-  .portfolio{
-    @include flex-center;
-    
-  }
 
   .contact{
     @include flex-center;
-    margin-top: $mobile-section-space;
     width: 100%;
     h2{
       @include mobile-header;
@@ -314,6 +324,7 @@ header{
     p{
       @include mobile-header;
       margin-top: 0px;
+      padding: 5px;
     }
     button{
       
@@ -327,6 +338,28 @@ header{
     }
   }
 }
+
+//PORTFOLIO PAGE
+
+.featPro{
+  @include flex-center;
+  margin-top: 100px;
+  width: 95%;
+  h2{
+    @include mobile-header;
+  }
+  p{
+    @include mobile-text;
+  }
+
+  img{
+    width: 100%;
+    background-color: black;
+  }
+}
+
+
+//FOOTER
 
 footer{
   margin-top: $mobile-section-space;

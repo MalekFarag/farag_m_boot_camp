@@ -59,8 +59,14 @@ table {
   display: none;
 }
 
-.whitebg {
-  background-color: white;
+.bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: solid 0px black;
+}
+
+.open {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 body {
@@ -69,6 +75,7 @@ body {
 
 .container {
   min-width: 340px;
+  max-width: 1440px;
   text-align: center;
 }
 
@@ -113,30 +120,27 @@ header .mobileHead .burgerBut {
 }
 
 header .mainNav {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   width: 100%;
-  border-top: solid 1px black;
+  height: 100%;
+  overflow: hidden;
 }
 
 header .mainNav a {
   color: whitesmoke;
   text-decoration: none;
   background-color: black;
-  padding: 5px;
+  padding: 7px;
   cursor: pointer;
 }
 
 header .mainNav li {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-size: 20px;
-  border-bottom: solid 1px black;
-}
-
-header .open {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  text-align: right;
+  margin-right: 50px;
+  font-size: 30px;
 }
 
 .body {
@@ -211,6 +215,7 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
@@ -238,6 +243,7 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
@@ -260,11 +266,25 @@ header .open {
   letter-spacing: -.7px;
 }
 
+.body .closeX {
+  width: 95%;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.body .off {
+  visibility: hidden;
+}
+
 .body .teamHead {
   font-size: 20px;
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
@@ -291,7 +311,6 @@ header .open {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 95%;
-  margin-top: 20px;
   margin-bottom: 0px;
 }
 
@@ -364,22 +383,6 @@ header .open {
   width: 95%;
 }
 
-.body .portfolio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  text-align: center;
-}
-
 .body .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,7 +397,6 @@ header .open {
   -ms-flex-item-align: center;
       align-self: center;
   text-align: center;
-  margin-top: 30px;
   width: 100%;
 }
 
@@ -403,6 +405,7 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
@@ -489,6 +492,7 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
@@ -524,10 +528,12 @@ header .open {
   margin: 10px;
   margin-top: 30px;
   letter-spacing: 1px;
+  padding: 3px;
   width: 100%;
   color: whitesmoke;
   background-color: black;
   margin-top: 0px;
+  padding: 5px;
 }
 
 .body .sub button {
@@ -550,6 +556,45 @@ header .open {
 .body .sub button:hover {
   background-color: lightgray;
   color: black;
+}
+
+.featPro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  margin-top: 100px;
+  width: 95%;
+}
+
+.featPro h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  padding: 3px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
+}
+
+.featPro p {
+  font-size: 16px;
+  letter-spacing: -.7px;
+}
+
+.featPro img {
+  width: 100%;
+  background-color: black;
 }
 
 footer {
