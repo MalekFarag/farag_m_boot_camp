@@ -6,13 +6,15 @@
     //burger menu
     const burger = document.querySelector('.burgerBut'),
           nav    = document.querySelector('.mainNav'),
-          header = document.querySelector('header');
+          header = document.querySelector('header'),
+          body   = document.querySelector('body');
 
           function showNav(){
               console.log('You touched my burger >:(');
               nav.classList.toggle('hidden');
               burger.classList.toggle('open');
               header.classList.toggle('bg');
+              body.classList.toggle('bg');
           }
 
           burger.addEventListener('click', showNav);
@@ -30,7 +32,7 @@
 
         function closeBio(){
             close.classList.add('off');
-            bioHead.innerHTML = "Hello, friend.";
+            bioHead.innerHTML = " ";
             bioHead.style.textAlign = "center";
             bio.innerHTML = " ";
         }
