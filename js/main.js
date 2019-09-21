@@ -71,5 +71,61 @@
 
         mates.forEach(mate => mate.addEventListener('click', showBio));
 
+        //video + lightbox
 
+        const lightbox   = document.querySelector('.lightbox'),
+              vid        = document.querySelector('#lightVid'),
+              button     = document.querySelector('.moreBut'),
+              xLight     = document.querySelector('.xLight');
+        function playVideo(){
+            vid.play();
+            console.log('video playing');
+        }
+
+        function pauseVideo(){
+            vid.pause();
+        }
+
+        function openLightbox(){
+            lightbox.classList.remove('hidden');
+            playVideo();
+
+        }
+
+        function closeLightbox(){
+            lightbox.classList.add('hidden');
+            pauseVideo();
+            console.log('video playing');
+        }
+
+        button.addEventListener('click', openLightbox);
+        //vid.addEventListener('ended', closeLightbox);
+        xLight.addEventListener('click', closeLightbox);
+
+        // video controls
+        const controls  = document.querySelector('.controls'),
+              playBut   = document.querySelector('.play'),
+              icon      = document.querySelector('.icon'),
+              timeline  = document.querySelector('.line');
+
+        function togglePlay(){ 
+            if(vid.paused){
+                icon.src = "images/controls/play.svg";
+                playVideo();
+            }
+            else{
+                icon.src = "images/controls/pause.svg";
+                pauseVideo();
+            }
+        }
+
+        //toggle play & pause
+        playBut.addEventListener('click', togglePlay);
+
+        //timeline anim
+        vid.addEventListener("timeupdate", function(){
+            let timePos = vid.currentTime / vid.duration;
+            timeline.style.width = timePos * 100 + "%";
+        });
+        
     })();

@@ -56,7 +56,7 @@ table {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .bg {
@@ -70,6 +70,85 @@ table {
 .open {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.lightbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox .xLight {
+  color: white;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 24px !important;
+  cursor: pointer;
+}
+
+.lightbox video {
+  margin-top: 30px;
+  width: 90%;
+}
+
+.lightbox .controls {
+  position: relative;
+  bottom: 25px;
+  z-index: 101;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+}
+
+.lightbox .controls .play {
+  height: 100%;
+  width: 20px;
+  margin: 2px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.lightbox .controls .line {
+  width: 100%;
+  height: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lightbox .lightImg {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.lightbox .lightImg img {
+  width: 90%;
+  margin-top: 50px;
 }
 
 body {
@@ -187,10 +266,11 @@ body {
   height: 30px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  width: inherit !important;
 }
 
 .container .hero .moreBut:hover {
-  background-color: lightgray;
+  background-color: white;
   color: black;
 }
 
@@ -506,7 +586,7 @@ body {
 }
 
 .container .body .contact form button:hover {
-  background-color: lightgray;
+  background-color: white;
   color: black;
 }
 
@@ -577,7 +657,7 @@ body {
 }
 
 .container .body .sub button:hover {
-  background-color: lightgray;
+  background-color: white;
   color: black;
 }
 
@@ -623,32 +703,49 @@ body {
 }
 
 .container .featPro .desc {
+  width: 95%;
+}
+
+.container .featPro .desc h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  padding: 3px;
+  width: 100%;
+  color: whitesmoke;
+  background-color: black;
+  margin-top: 10px !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.container .featPro .desc p {
   font-size: 16px;
   letter-spacing: -.7px;
   font-size: 18px;
-  width: 95%;
-  text-align: left;
 }
 
 .container .featPro .shots {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  margin-top: 5px;
 }
 
 .container .featPro .shots img {
-  width: 30%;
-  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.container .featPro .shots img:hover {
+  opacity: .7;
 }
 
 .container .moreProHead {
@@ -660,6 +757,7 @@ body {
   width: 100%;
   color: whitesmoke;
   background-color: black;
+  margin-top: 10px !important;
   width: 95%;
 }
 
@@ -677,13 +775,36 @@ body {
   -ms-flex-item-align: center;
       align-self: center;
   text-align: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.container .morePro .pro {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.container .morePro .pro:hover {
+  opacity: .7;
+}
+
+.container .morePro .pro .proImg {
+  width: 60%;
+}
+
+.container .morePro .pro .beer {
+  width: 50%;
+}
+
+.container .morePro .pro h6 {
+  font-size: 16px;
+  font-weight: bold;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  letter-spacing: 1px;
 }
 
 .container footer {
@@ -788,6 +909,34 @@ body {
   iframe {
     height: 300px !important;
   }
+  .shots {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px;
+  }
+  .morePro {
+    display: -ms-grid !important;
+    display: grid !important;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .morePro .pro {
+    margin-top: 0px !important;
+  }
+  .morePro .pro .proImg {
+    width: 100% !important;
+  }
+  .morePro .pro .data {
+    width: 100% !important;
+  }
+  .morePro .pro .beer {
+    width: 100% !important;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -835,6 +984,17 @@ body {
     height: 175px !important;
     width: 175px !important;
     border-radius: 175px !important;
+  }
+  .desc {
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .desc h2 {
+    margin-left: 0px !important;
+    width: 30% !important;
+  }
+  .desc p {
+    font-size: 24px !important;
   }
   footer {
     padding-top: 15px;
@@ -913,6 +1073,9 @@ body {
   }
   form label {
     font-size: 18px !important;
+  }
+  .lightImg #lightImg {
+    width: 60% !important;
   }
 }
 

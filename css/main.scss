@@ -9,7 +9,7 @@
 
 
 .hidden{
-	display: none;
+	display: none !important;
 }
 .bg{
   position: absolute;
@@ -21,6 +21,75 @@
 
 .open{
   transform: rotate(90deg);
+}
+
+.lightbox{
+  @include flex-center;
+
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0,0,0,.6);
+  width: 100%;
+  height: 100%;
+
+  .xLight{
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 24px !important;
+    cursor: pointer;
+  }
+
+  video{
+      margin-top: 30px;
+      width: 90%;
+    }
+
+    //custom video controls
+      .controls{
+        position: relative;
+        bottom: 25px;
+        z-index: 101;
+        display: flex;
+        height: 25px;
+        width: 90%;
+
+        background-color: rgba(255, 255, 255, .9);
+        border-radius: 3px;
+
+        .play{
+          height: 100%;
+          width: 20px;
+          margin: 2px;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+
+        .line{
+          width: 100%;
+          height: 100%;
+          align-self: center;
+
+          background-color: rgba(0, 0, 0, .9);
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+
+  .lightImg{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    img{
+      width: 90%;
+      margin-top: 50px;
+    }
+
+    
+
+  }
 }
 
 
@@ -106,6 +175,7 @@ header{
 
     .moreBut{
       @include button;
+      width: inherit !important;
       }
   }
 .body{
@@ -373,33 +443,73 @@ header{
     background-color: black;
   }
   .desc{
-    @include mobile-text;
-    font-size: 18px;
-    width: 95%;
-    text-align: left;
+      width: 95%;
+      h2{
+        @include mobile-header;
+        margin-top: 10px !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    p{
+      @include mobile-text;
+      font-size: 18px;
+      
+    }
   }
   .shots{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        margin-top: 5px;
     img{
-      width: 30%;
-      margin: 5px;
+      margin-left: auto;
+      margin-right: auto;
+
+      transition: all .2s ease;
+      &:hover{
+        opacity: .7;
+      }
     }
   }
 }
 
 .moreProHead{
   @include mobile-header;
+  margin-top: 10px !important;
   width: 95%;
 }
 .morePro{
   @include flex-center;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
+  .pro{
+    margin-top: 10px;
+    width: 100%;
+
+    cursor: pointer;
+    transition: all .2s ease;
+    &:hover{
+      opacity: .7;
+    }
+    .proImg{
+      width: 60%;
+    }
+
+    .beer{
+      width: 50%;
+    }
+
+    h6{
+      font-size: 16px;
+      font-weight: bold;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5px;
+      letter-spacing: 1px;
+    }
+    
+  }
 }
 
 
@@ -489,6 +599,33 @@ footer{
     height: 300px !important;
   }
 
+  .shots{
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px;
+  }
+  .morePro{
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px; 
+      width: 90% !important;
+      margin-left: auto;
+      margin-right: auto;
+      .pro{
+        margin-top: 0px !important;
+    .proImg{
+      width: 100% !important;
+    }
+    .data{
+      width: 100% !important;
+    }
+    .beer{
+      width: 100% !important;
+    }
+  }
+  }
+
+
 }
 
 @media screen and (min-width: 700px){
@@ -542,6 +679,18 @@ footer{
     width: 175px !important;
     border-radius: 175px !important;
   }
+
+  .desc{
+    text-align: left !important;
+    width: 100% !important;
+    h2{
+      margin-left: 0px !important;
+      width: 30% !important;
+    }
+    p{
+      font-size: 24px !important;
+    }
+  }
   footer{
     padding-top: 15px;
     .footerIcons{
@@ -563,6 +712,8 @@ footer{
       }
     }
   }
+
+
 }
 
 @media screen and (min-width: 1000px){
@@ -625,6 +776,12 @@ footer{
     }
     label{
       font-size: 18px !important;
+    }
+  }
+  
+  .lightImg{
+    #lightImg{
+      width: 60% !important;
     }
   }
 }
