@@ -2,14 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/main.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <title>Cliff Creatives</title>
 </head>
 <body>
+    <div class="lightbox hidden">
+        <p class="xLight">x</p>
+            <video id='lightVid'>
+                <source src='assets/video/promotional_video_cc.mp4' type='video/mp4'>    
+            </video>
+            <div class="controls">
+                <div class="play"> <img class="icon" src="images/controls/play.svg"></div>
+                <div class="line">
+                </div>
+                <div class='volume'></div>
+            </div>
+    </div>
     <div class="container">
     <h1 class='hidden'>Cliff Creatives</h1>
+    
     <header>
         <div class="mobileHead">
             <h2 class="hidden">Main Header</h2>
@@ -19,43 +33,49 @@
         <nav class="mainNav hidden">
             <h2 class="hidden">Main Nav</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Porfolio</a></li>
-                <li><a href="#.html">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="navItem"><a href="index.html">Home</a></li>
+                <li class="navItem"><a href="portfolio.html">Porfolio</a></li>
+                <li class="navItem"><a href="#.html">About</a></li>
+                <li class="navItem"><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
-        <div class="body">
+        
 
             <!--HERO AREA-->
             <div class="hero">
-                <h2>Cliff Creatives</h2>
-                <p>other shit text</p>
+                <video class="videoHead" loop muted autoplay>
+                    <source src='assets/video/promotional_video_cc.mp4' type='video/mp4'>
+                </video>
+                <button class="moreBut">Watch Video</button>
             </div>
-
+            <div class="body">
             <!--HOW WE DO THINGS-->
             <div class="hwd">
                 <h2>How We Do Things Around Here</h2>
+            <div class="paraDiv">
                 <div class="para">
-                    <h4>Innovative</h4>
+                    <h4 class="hwd1">Innovative</h4>
                     <p>Here at Cliff Creatives, we bend the laws of design in order to stand out from the competition!</p>
                 </div>
 
                 <div class="para">
-                        <h4>Edgy</h4>
-                        <p>Here at Cliff Creatives, we bend the laws of design in order to stand out from the competition!</p>
+                        <h4 class="hwd2">Edgy</h4>
+                        <p>Some call it "unprofessional", we call it creative!</p>
                 </div>
 
                 <div class="para">
-                            <h4>Fresh</h4>
-                            <p>Here at Cliff Creatives, we bend the laws of design in order to stand out from the competition!</p>
+                            <h4 class="hwd3">Fresh</h4>
+                            <p>Fresh designs, with the latest code and software to make your company stand out.</p>
                 </div>
+            </div>
             </div>
 
             <!--TEAM AREA-->
-                <h4 class="teamHead">Our Awesome Team</h4>
+                <h2 class="teamHead">Our Awesome Team</h2>
+                <p class="closeX off">x</p>
             <div class="team">
+                
                 
                 <div class="mate">
                     <div class="mateImg nick"></div>
@@ -71,15 +91,8 @@
             </div>
 
             <div class="mateInfo">
-                <h5 class="bioHead">Hello, friend.</h5>
+                <h5 class="bioHead"></h5>
                     <p class="bio"></p>
-
-            </div>
-
-            <!--PORTFOLIO AREA-->
-            <div class="portfolio">
-
-
 
             </div>
 

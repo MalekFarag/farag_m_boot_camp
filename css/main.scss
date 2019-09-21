@@ -9,28 +9,104 @@
 
 
 .hidden{
-	display: none;
+	display: none !important;
 }
-.whitebg{
-  background-color: white;
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0,0,0,.6);
+}
+
+.open{
+  transform: rotate(90deg);
+}
+
+.lightbox{
+  @include flex-center;
+
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0,0,0,.6);
+  width: 100%;
+  height: 100%;
+
+  .xLight{
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 24px !important;
+    cursor: pointer;
+  }
+
+  video{
+      margin-top: 30px;
+      width: 90%;
+    }
+
+    //custom video controls
+      .controls{
+        position: relative;
+        bottom: 25px;
+        z-index: 101;
+        display: flex;
+        height: 25px;
+        width: 90%;
+
+        background-color: rgba(255, 255, 255, .9);
+        border-radius: 3px;
+
+        .play{
+          height: 100%;
+          width: 20px;
+          margin: 2px;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+
+        .line{
+          width: 100%;
+          height: 100%;
+          align-self: center;
+
+          background-color: rgba(0, 0, 0, .9);
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+
+  .lightImg{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    img{
+      width: 90%;
+      margin-top: 50px;
+    }
+
+    
+
+  }
 }
 
 
 
 body {
   font-family: 'Helvetica';
-
-  //Background
+  background-color: rgba(0,0,0,0);
 }
 
 .container {
+  margin:0 auto;
   min-width: 340px;
   text-align: center;
-}
-
 header{
     position: fixed;
     width: 100%;
+    z-index: 99;
   
   .mobileHead{
     height: 50px;
@@ -57,79 +133,124 @@ header{
   }
 
   .mainNav{
-    background-color: white;
+    background-color: rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
-    border-top: solid 1px lightgray;
+    height: 100%;
+    overflow: hidden;
 
     a{
-      color: black;
+      color: whitesmoke;
       text-decoration: none;
-
-      
+      background-color: black;
+      padding: 7px;
+      cursor: pointer;
+      transition: all .2s ease;
+      &:hover{
+        color: black;
+        background-color: whitesmoke;
+      }
     }
     li{
         padding-top: 40px;
         padding-bottom: 40px;
+        text-align: right;
+        margin-right: 50px;
 
-        font-size: 20px;
-
-        
-        border-bottom: solid 1px lightgray;
-        cursor: pointer;
+        font-size: 30px;
       }
-  }
-
-  .open{
-    transform: rotate(90deg);
   }
 }
 
+   .hero{
+    @include flex-center;
+
+    
+    .videoHead{
+      width: 100% !important;
+      height: auto !important;
+
+      transition: all .2s ease;
+    }
+
+    .moreBut{
+      @include button;
+      width: inherit !important;
+      }
+  }
 .body{
     display: flex;
     flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
 
-  .hero{
-    margin-top: 180px;
-    
-    @include flex-center;
-    h2{
-      margin-top: 50px;
-      font-size: 36px;
-    }
-    p{
-      margin-bottom: 180px;
-    }
-  }
+
 
   .hwd{
     @include flex-center;
+    width: 100%;
     h2{
+        @include mobile-header;
+        margin-top: 15px;
+        width: 95%;
         font-size: 20px;
         letter-spacing: 1px;
+      }
+      .paraDiv{
+        width: 95%;
       }
     .para{
       display: flex;
       flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      width: 95%;
       text-align: left;
       h4{
         @include mobile-header;
+        margin-top: 15px;
+
+        letter-spacing: 2px;
+        width: 40%;
         margin-left: 0px;
         margin-bottom: 10px;
+        
       }
+      
+      .hwd2{
+        width: 30%;
+      }
+
+      .hwd3{
+        width: 60%;
+      }
+      
+      
       p{
         @include mobile-text;
       }
     }
-    
+  }
+
+
+  .closeX{
+    width: 95%;
+
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: .7;
+
+    cursor: pointer;
+  }
+
+  .off{
+    visibility: hidden;
   }
 
 
   .teamHead{
     @include mobile-header;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: $mobile-section-space;
   }
   .team{
@@ -138,7 +259,6 @@ header{
     justify-content: space-between;
 
     width: 95%;
-    margin-top: 20px;;
     margin-bottom: 0px;
 
     .mateImg{
@@ -192,7 +312,7 @@ header{
         }
         .bio{
           @include mobile-text;
-          text-align: left;
+          text-align: center;
           line-height: 18px;
           margin-top: 5px;
           margin-left: auto;
@@ -202,22 +322,20 @@ header{
       }
 
     }
-  .portfolio{
-    @include flex-center;
-    
-  }
 
   .contact{
     @include flex-center;
-    margin-top: $mobile-section-space;
     width: 100%;
-    h3{
+    h2{
       @include mobile-header;
+      margin-top: 15px;
+      width: 95%;
     }
     form{
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex-wrap: wrap;
       width: 95%;
       label{
         opacity: .5;
@@ -233,11 +351,12 @@ header{
         height: 27px;
 
         border: solid 1px gray;
-        border-radius: 8px;
+        border-radius: 2px;
         transition: all .2s ease;
 
         &:focus{
-          border-radius: 12px;
+          background-color: rgb(253, 253, 253);
+          color: black;
         }
       }
 
@@ -249,32 +368,24 @@ header{
         padding-left: 10px;
 
         border: solid 1px gray;
-        border-radius: 8px;
+        border-radius: 2px;
         transition: all .2s ease;
 
         &:focus{
-          border-radius: 12px;
+          background-color: rgb(253, 253, 253);
+          color: black;
         }
       }
       button{
-          cursor: pointer;
-          margin-top: 10px;
-          border-radius: 8px;
-
-          border: none;
-          height: 28px;
-          width: 50%;
-
-          margin-left: auto;
-          margin-right: auto;
-          
-          transition: all .2s ease;
-
-          &:focus{
-            background-color: blue;
-            border-radius: 12px;
-          }
-        }
+        height: 28px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 30px;
+        transition: all .2s ease;
+        @include button;
+        margin-bottom: 10px;
+      }
     }
     
     h4{
@@ -293,30 +404,116 @@ header{
     margin-top: $mobile-section-space;
     width: 60%;
 
-    padding: 5px;
+    padding: 10px;
 
     p{
       @include mobile-header;
       margin-top: 0px;
+      padding: 5px;
     }
     button{
-      cursor: pointer;
-          margin-top: 10px;
-          border-radius: 8px;
+      
+      margin-top: 10px;
+      border-radius: 8px;
 
-          border: none;
-          height: 28px;
-          width: 60%;
-
-          transition: all .2s ease;
-
-          &:focus{
-            background-color: blue;
-            border-radius: 12px;
-          }
+      border: none;
+      height: 28px;
+      width: 80%;
+      @include button;
     }
   }
 }
+
+//PORTFOLIO PAGE
+
+.featPro{
+  @include flex-center;
+  margin-top: 40px;
+  width: 95%;
+  h2{
+    @include mobile-header;
+  }
+  .proTag{
+    @include mobile-text;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  img{
+    width: 100%;
+    background-color: black;
+  }
+  .desc{
+      width: 95%;
+      h2{
+        @include mobile-header;
+        margin-top: 10px !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    p{
+      @include mobile-text;
+      font-size: 18px;
+      
+    }
+  }
+  .shots{
+    width: 100%;
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        margin-top: 5px;
+    img{
+      margin-left: auto;
+      margin-right: auto;
+
+      transition: all .2s ease;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+}
+
+.moreProHead{
+  @include mobile-header;
+  margin-top: 10px !important;
+  width: 95%;
+}
+.morePro{
+  @include flex-center;
+  .pro{
+    margin-top: 10px;
+    width: 100%;
+
+    cursor: pointer;
+    transition: all .2s ease;
+    &:hover{
+      opacity: .7;
+    }
+    .proImg{
+      width: 60%;
+    }
+
+    .beer{
+      width: 50%;
+    }
+
+    h6{
+      font-size: 16px;
+      font-weight: bold;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5px;
+      letter-spacing: 1px;
+    }
+    
+  }
+}
+
+
+//FOOTER
 
 footer{
   margin-top: $mobile-section-space;
@@ -335,24 +532,23 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     width: 30%;
-    height: 20px;
 
-    margin-top: 10px;
+    margin-top: 14px;
     img{
-      height: 90%;
+      height: 20px;
       cursor: pointer;
     }
     #fb{
       position: relative;
       bottom: 1px;
-      height: 102%;
+      height: 22px;
     }
   }
 
   .footerNav{
     width: 60%;
 
-    margin-top: 10px;
+    margin-top: 15px;
     ul{
       display: flex;
       flex-direction: row;
@@ -364,8 +560,16 @@ footer{
 
       a{
         cursor: pointer;
-        color: black;
-        //text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 3px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all .2s ease;
+        &:hover{
+          color: black;
+        background-color: white;
+        }
       }
     }
     
@@ -379,4 +583,223 @@ footer{
     font-size: 10px;
     width: 100%;
   }
+}
+}
+
+//media queries
+@media screen and (min-width: 550px){
+  
+  .mateImg{
+    height: 150px !important;
+    width: 150px !important;
+    border-radius: 150px !important;
+  }
+
+  iframe{
+    height: 300px !important;
+  }
+
+  .shots{
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px;
+  }
+  .morePro{
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px; 
+      width: 90% !important;
+      margin-left: auto;
+      margin-right: auto;
+      .pro{
+        margin-top: 0px !important;
+    .proImg{
+      width: 100% !important;
+    }
+    .data{
+      width: 100% !important;
+    }
+    .beer{
+      width: 100% !important;
+    }
+  }
+  }
+
+
+}
+
+@media screen and (min-width: 700px){
+  .bioHead{
+    font-size: 24px !important;
+  }
+  .bio{
+    font-size: 22px !important;
+    line-height: 24px !important;
+  }
+  button{
+      font-size: 20px !important;
+      width: 50% !important;
+  }
+
+  a{
+    .moreBut{
+    width: 100% !important;
+  }
+  }
+  h2{
+    font-size: 24px !important;
+  }
+  .hero{
+    margin-top: 0px !important;
+  }
+  .mobileHead{
+    background-color: white;
+    margin-top: 15px !important;
+    width: 98%;
+    box-shadow: 0px 0px 21px -10px rgba(0,0,0,0.75);
+    margin-left: auto;
+    margin-right: auto; 
+    .mobileLogo{
+      align-self: center !important;
+    }
+  }
+  .mainNav{
+    li{
+      font-size: 36px !important;
+    }
+  }
+
+  .hwd{
+    p{
+      font-size: 18px !important;
+    }
+  }
+  .mateImg{
+    height: 175px !important;
+    width: 175px !important;
+    border-radius: 175px !important;
+  }
+
+  .desc{
+    text-align: left !important;
+    width: 100% !important;
+    h2{
+      margin-left: 0px !important;
+      width: 30% !important;
+    }
+    p{
+      font-size: 24px !important;
+    }
+  }
+  footer{
+    padding-top: 15px;
+    .footerIcons{
+      flex-wrap: wrap;
+      height: 50px !important;
+      width: 30% !important;
+      img{
+        height: 30px !important;
+        margin-right: 10px;
+      }
+      #fb{
+        bottom: 3px !important;
+        height: 36px !important;
+      }
+    }
+    .footerNav{
+      ul{
+        font-size: 20px !important;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1000px){
+  .bioHead{
+    font-size: 28px !important;
+  }
+  .bio{
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+  .mainNav{
+    li{
+      font-size: 40px !important;
+    }
+  }
+
+  h2{
+    font-size: 30px !important;
+  }
+
+  .hwd{
+    .paraDiv{
+      display: flex;
+      justify-content: space-between;
+    }
+    .para{
+      margin-top: 20px !important;
+      width: 26%;
+    }
+
+    h4{
+      font-size: 24px !important;
+      width: 70% !important;
+    }
+
+    .hwd2{
+      width: 60% !important;
+    }
+
+    .hwd3{
+      width: 90% !important;
+    }
+    p{
+      font-size: 22px !important;
+    }
+  }
+
+  .mateImg{
+    height: 200px !important;
+    width: 200px !important;
+    border-radius: 200px !important;
+  }
+
+  form{
+    justify-content: space-around;
+    input{
+      height: 35px !important;
+      font-size: 20px !important;
+      letter-spacing: 1px;
+    }
+    label{
+      font-size: 18px !important;
+    }
+  }
+  
+  .lightImg{
+    #lightImg{
+      width: 60% !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .bioHead{
+    width: 90% !important;
+    font-size: 32px !important;
+  }
+  .bio{
+    font-size: 28px !important;
+    line-height: 30px !important;
+  }
+
+  .mateImg{
+    height: 250px !important;
+    width: 250px !important;
+    border-radius: 250px !important;
+  }
+
 }
